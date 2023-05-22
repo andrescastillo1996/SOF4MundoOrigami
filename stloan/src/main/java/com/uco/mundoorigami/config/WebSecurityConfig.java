@@ -13,11 +13,19 @@ import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+import org.springframework.web.servlet.config.annotation.CorsRegistry;
 
 @Configuration
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
+
+    @Override
+    public void addCorsMappings(CorsRegistry registry) {
+        registry.addMapping("/**")
+                .allowedMethods("DELETE", "PUT", "POST", "GET").allowedHeaders("*")
+                .allowedOrigins("http://localhost:4200").allowCredentials(true).maxAge(3600l);
+    }
 
 /*	@Autowired
 	private JwtAuthenticationEntryPoint jwtAuthenticationEntryPoint;

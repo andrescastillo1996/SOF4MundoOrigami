@@ -21,12 +21,12 @@ public class AplicacionWebConfig {
 	        };
 	    }
 
-	@Bean
+/*	@Bean
 	public PasswordEncoder passwordEncoder() {
 		return new BCryptPasswordEncoder();
 	}
 
-
+*/
 
 
 }
