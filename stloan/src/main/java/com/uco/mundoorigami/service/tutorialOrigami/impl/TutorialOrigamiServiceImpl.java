@@ -24,6 +24,9 @@ public class TutorialOrigamiServiceImpl implements TutorialOrigamiService {
     }
 
 
+
+
+
     @Override
     public TutorialOrigami save(TutorialOrigami tutorialOrigami) {
         return tutorialOrigamiMapper.toTutorialOrigami (tutorialOrigamiRepository.save(tutorialOrigamiMapper.toTutorialOrigamiEntity(tutorialOrigami)));
@@ -33,6 +36,16 @@ public class TutorialOrigamiServiceImpl implements TutorialOrigamiService {
     public List<TutorialOrigami> getAllByStatus(String status) {
         return  tutorialOrigamiMapper.toTutorialOrigamiList(tutorialOrigamiRepository.findByStatus(status));
 
+    }
+
+    @Override
+    public List<TutorialOrigami> getAllByLevel(String level) {
+        return tutorialOrigamiMapper.toTutorialOrigamiList(tutorialOrigamiRepository.findAllByLevel(level));
+    }
+
+    @Override
+    public List<TutorialOrigami> getallByCategory(String category) {
+        return tutorialOrigamiMapper.toTutorialOrigamiList(tutorialOrigamiRepository.findAllByCategory(category));
     }
 
 

@@ -20,7 +20,9 @@ public interface TutorialOrigamiMapper {
                     @Mapping(source = "codeOrigami",target = "codeOrigami"),
                     @Mapping(source = "codeTutorialStep",target = "codeTutorialStep"),
                     @Mapping(source ="description",target = "description"),
-                    @Mapping(source = "status",target = "status")
+                    @Mapping(source = "status",target = "status"),
+                    @Mapping(source = "level",target = "level"),
+                    @Mapping(source = "category",target = "category")
             }
     )
     TutorialOrigami toTutorialOrigami(TutorialOrigamiEntity resourceEntity);

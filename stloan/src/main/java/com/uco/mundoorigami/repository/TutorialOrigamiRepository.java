@@ -18,4 +18,11 @@ public interface TutorialOrigamiRepository extends CrudRepository<TutorialOrigam
     @Query(value = " SELECT * FROM TUTORIAL_ORIGAMI WHERE CODE = :code and STATUS = :status ", nativeQuery = true)
     TutorialOrigamiEntity findByCode(@Param("code")int code, @Param("status") String status);
 
+    @Query(value = " SELECT * FROM TUTORIAL_ORIGAMI WHERE LEVEL = :level", nativeQuery = true)
+    List<TutorialOrigamiEntity> findAllByLevel (@Param("level") String level);
+
+    @Query(value = " SELECT * FROM TUTORIAL_ORIGAMI WHERE CATEGORY = :category", nativeQuery = true)
+    List<TutorialOrigamiEntity> findAllByCategory (@Param("category") String category);
+
+
 }

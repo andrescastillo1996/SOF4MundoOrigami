@@ -15,6 +15,7 @@ public class OrigamiTypeEntity {
     @Column(name="status")
     private String status;
 
+
     public OrigamiTypeEntity()
     {
 

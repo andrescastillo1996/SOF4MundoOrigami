@@ -31,6 +31,16 @@ public class TutorialOrigamiController {
         return  new ResponseEntity<>(tutorialOrigamiService.getAllByStatus(status),HttpStatus.OK);
 
     }
+    @GetMapping("/all-by-level/{level}")
+    public ResponseEntity<List<TutorialOrigami>> getAllByLevel (@PathVariable String level){
+        return  new ResponseEntity<>(tutorialOrigamiService.getAllByLevel(level),HttpStatus.OK);
+
+    }
+    @GetMapping("/all-by-category/{category}")
+    public ResponseEntity<List<TutorialOrigami>> getAllByCategory(@PathVariable String category){
+        return  new ResponseEntity<>(tutorialOrigamiService.getallByCategory(category),HttpStatus.OK);
+
+    }
 
     @PutMapping("update")
     public ResponseEntity<TutorialOrigami> update(@RequestBody TutorialOrigami origami){

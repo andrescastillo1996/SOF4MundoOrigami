@@ -8,13 +8,17 @@ public class TutorialOrigami {
 
     private String description;
     private String status;
+    private String level;
+     private String category;
 
-    public TutorialOrigami(int codeOrigami, int codeTutorialStep, String description, String status) {
 
+    public TutorialOrigami(int codeOrigami, int codeTutorialStep, String description, String status, String level, String category) {
         this.codeOrigami = codeOrigami;
         this.codeTutorialStep = codeTutorialStep;
         this.description = description;
         this.status = status;
+        this.level = level;
+        this.category = category;
     }
 
     public int getCode() {
@@ -55,5 +59,21 @@ public class TutorialOrigami {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public String getLevel() {
+        return level;
+    }
+
+    public void setLevel(String level) {
+        this.level = level;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
     }
 }

@@ -15,17 +15,13 @@ public class TutorialOrigamiEntity {
     private String description;
     @Column(name = "status")
     private String status;
-
+    @Column(name="level")
+    private String level;
+    @Column(name="category")
+    private String category;
     public TutorialOrigamiEntity()
     {
 
-    }
-    public TutorialOrigamiEntity(int codeOrigami, int codeTutorialStep, String description, String status) {
-
-        this.codeOrigami = codeOrigami;
-        this.codeTutorialStep = codeTutorialStep;
-        this.description = description;
-        this.status = status;
     }
 
     public int getCode() {
@@ -66,5 +62,21 @@ public class TutorialOrigamiEntity {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public String getLevel() {
+        return level;
+    }
+
+    public void setLevel(String level) {
+        this.level = level;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
     }
 }

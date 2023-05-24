@@ -22,6 +22,7 @@ public interface ResourceMapper
             @Mapping(source ="material", target = "material"),
             @Mapping(source = "description", target = "description"),
             @Mapping(source = "status",target = "status")
+
     })
     Resource toResource(ResourceEntity resourceEntity);
     List<Resource> toResourceList(List<ResourceEntity> resourceEntities);
