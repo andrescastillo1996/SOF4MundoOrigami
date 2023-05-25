@@ -11,7 +11,6 @@ import java.util.List;
 
 @RestController
 @RequestMapping("api/Status-step-user")
-@CrossOrigin(origins = "http://localhost:4200")
 public class StatusStepUserController {
     private final StatusStepUserServiceImpl statusStepUserService;
     @Autowired

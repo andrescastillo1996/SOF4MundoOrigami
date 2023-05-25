@@ -12,7 +12,6 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/tutorial-origami")
-@CrossOrigin(origins = "http://localhost:4200")
 public class TutorialOrigamiController {
     private final TutorialOrigamiServiceImpl tutorialOrigamiService;
     @Autowired

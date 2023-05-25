@@ -1,6 +1,7 @@
 package com.uco.mundoorigami.service.user.impl;
 
 
+import com.uco.mundoorigami.crosscutting.exception.DuplicateDataException;
 import com.uco.mundoorigami.domain.User;
 import com.uco.mundoorigami.mapper.UserMapper;
 import com.uco.mundoorigami.model.UserEntity;
@@ -27,6 +28,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User save(User user) {
+        this.userAlreadyExist(user.getEmail());
         return userMapper.toUser(userRepository.save(userMapper.toUserEntity(user)));
 
     }
@@ -38,9 +40,8 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    @Transactional(readOnly = true)
     public User findByEmail(String email) {
-        return userRepository. findByEmail(email);
+        return userMapper.toUser(userRepository.findByEmail(email));
     }
 
     @Override
@@ -58,5 +59,13 @@ public class UserServiceImpl implements UserService {
         userToUpdate.setEmail(user.getName());
         userToUpdate.setPassword(user.getPassword());
         return userMapper.toUser(userRepository.save(userToUpdate)) ;
+    }
+
+
+    private void userAlreadyExist(String email){
+        if(this.findByEmail(email) != null) {
+            throw new DuplicateDataException("la persona con el correo: " + email + " ya se encuentra registrada.", "la persona con el correo: " + email + " ya se encuentra registrada.");
+        }
+
     }
 }

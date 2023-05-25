@@ -11,7 +11,6 @@ import java.util.List;
 
 @RestController
 @RequestMapping("api/origami-type")
-@CrossOrigin(origins = "http://localhost:4200")
 public class OrigamiTypeController {
 
     private  final OrigamiTypeServiceImpl origamiTypeService;

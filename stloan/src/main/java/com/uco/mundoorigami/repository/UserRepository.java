@@ -14,8 +14,8 @@ public interface UserRepository extends CrudRepository<UserEntity,Integer>
 {
     @Query(value = " SELECT * FROM USER WHERE STATUS = :status ", nativeQuery = true)
     List<UserEntity> findByStatus(@Param("status") String status);
-    @Query(value = "SELECT * FROM USER WHERE email=? ", nativeQuery = true)
-    User findByEmail(String email);
+    @Query(value = "SELECT * FROM USER WHERE email= :email ", nativeQuery = true)
+    UserEntity findByEmail(@Param("email")String email);
 
     @Query(value = " SELECT * FROM USER WHERE CODE = :code and STATUS = :status ", nativeQuery = true)
     UserEntity findByCode(@Param("code")int code, @Param("status") String status);

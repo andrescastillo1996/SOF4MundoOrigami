@@ -12,7 +12,6 @@ import java.util.List;
 
 @RestController
 @RequestMapping("api/resource")
-@CrossOrigin(origins = "http://localhost:4200")
 public class ResourceController {
 
 

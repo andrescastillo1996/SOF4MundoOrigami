@@ -13,7 +13,6 @@ import java.util.List;
 
 @Controller
 @RestController("api/tutorial-status-user")
-@CrossOrigin(origins = "http://localhost:4200")
 public class TutorialStatusUserController {
     private  final TutorialStatusUserServiceImpl tutorialStatusUserService;
     @Autowired
