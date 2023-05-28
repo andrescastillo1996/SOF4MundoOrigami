@@ -7,6 +7,8 @@ public class TutorialOrigamiEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int code;
+    @Column(name="name")
+    private String name;
 
     @Column(name="description")
     private String description;
@@ -18,6 +20,15 @@ public class TutorialOrigamiEntity {
     private String category;
     public TutorialOrigamiEntity() {}
 
+    public TutorialOrigamiEntity(int code, String name, String description, String status, String level, String category) {
+        this.code = code;
+        this.name = name;
+        this.description = description;
+        this.status = status;
+        this.level = level;
+        this.category = category;
+    }
+
     public int getCode() {
         return code;
     }
@@ -26,7 +37,13 @@ public class TutorialOrigamiEntity {
         this.code = code;
     }
 
+    public String getName() {
+        return name;
+    }
 
+    public void setName(String name) {
+        this.name = name;
+    }
 
     public String getDescription() {
         return description;
