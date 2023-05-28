@@ -17,8 +17,6 @@ public interface TutorialOrigamiMapper {
     @Mappings(
             {
                     @Mapping(source = "code",target = "code"),
-                    @Mapping(source = "codeOrigami",target = "codeOrigami"),
-                    @Mapping(source = "codeTutorialStep",target = "codeTutorialStep"),
                     @Mapping(source ="description",target = "description"),
                     @Mapping(source = "status",target = "status"),
                     @Mapping(source = "level",target = "level"),

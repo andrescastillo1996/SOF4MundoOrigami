@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+
 @Service
 public class TutorialOrigamiServiceImpl implements TutorialOrigamiService {
 
@@ -17,24 +18,27 @@ public class TutorialOrigamiServiceImpl implements TutorialOrigamiService {
     private final TutorialOrigamiRepository tutorialOrigamiRepository;
     private final TutorialOrigamiMapper tutorialOrigamiMapper;
 
+
+
     @Autowired
     public TutorialOrigamiServiceImpl(TutorialOrigamiRepository tutorialOrigamiRepository, TutorialOrigamiMapper tutorialOrigamiMapper) {
         this.tutorialOrigamiRepository = tutorialOrigamiRepository;
         this.tutorialOrigamiMapper = tutorialOrigamiMapper;
-    }
 
+    }
 
 
 
 
     @Override
     public TutorialOrigami save(TutorialOrigami tutorialOrigami) {
-        return tutorialOrigamiMapper.toTutorialOrigami (tutorialOrigamiRepository.save(tutorialOrigamiMapper.toTutorialOrigamiEntity(tutorialOrigami)));
+        tutorialOrigami.setStatus("A");
+        return tutorialOrigamiMapper.toTutorialOrigami(tutorialOrigamiRepository.save(tutorialOrigamiMapper.toTutorialOrigamiEntity(tutorialOrigami)));
     }
 
     @Override
     public List<TutorialOrigami> getAllByStatus(String status) {
-        return  tutorialOrigamiMapper.toTutorialOrigamiList(tutorialOrigamiRepository.findByStatus(status));
+        return tutorialOrigamiMapper.toTutorialOrigamiList(tutorialOrigamiRepository.findByStatus(status));
 
     }
 
@@ -59,8 +63,6 @@ public class TutorialOrigamiServiceImpl implements TutorialOrigamiService {
     @Override
     public TutorialOrigami update(TutorialOrigami tutorialOrigami) {
         TutorialOrigamiEntity tutorialOrigamiToUpdate = this.tutorialOrigamiRepository.findByCode(tutorialOrigami.getCode(), "A");
-        tutorialOrigamiToUpdate.setCodeOrigami(tutorialOrigami.getCodeOrigami());
-        tutorialOrigamiToUpdate.setCodeTutorialStep(tutorialOrigami.getCodeTutorialStep());
         tutorialOrigamiToUpdate.setDescription(tutorialOrigami.getDescription());
         return tutorialOrigamiMapper.toTutorialOrigami(tutorialOrigamiRepository.save(tutorialOrigamiToUpdate));
 

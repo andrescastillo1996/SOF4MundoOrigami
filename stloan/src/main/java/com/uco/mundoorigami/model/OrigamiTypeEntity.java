@@ -14,6 +14,8 @@ public class OrigamiTypeEntity {
     private String name;
     @Column(name="status")
     private String status;
+    @Column(name="description")
+    private String description;
 
 
     public OrigamiTypeEntity()
@@ -21,10 +23,12 @@ public class OrigamiTypeEntity {
 
 
     }
-    public OrigamiTypeEntity(int code, String name, String status) {
+    public OrigamiTypeEntity(int code, String name, String status, String description) {
         setCode(code);
         setName(name);
         setStatus(status);
+        setDescription(description);
+
     }
 
     public int getCode() {
@@ -50,5 +54,13 @@ public class OrigamiTypeEntity {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 }

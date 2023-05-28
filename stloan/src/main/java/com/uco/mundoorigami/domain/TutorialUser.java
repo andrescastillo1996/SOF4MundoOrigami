@@ -5,7 +5,7 @@ public class TutorialUser {
     private int codeUser;
     private int codeTutorialOrigami;
     private int codeTutorialStepUser;
-    private int CodeStatusTutorialUser;
+    private int codeStatusTutorialUser;
     private String status;
 
 
@@ -14,7 +14,7 @@ public class TutorialUser {
         this.codeUser = codeUser;
         this.codeTutorialOrigami = codeTutorialOrigami;
         this.codeTutorialStepUser = codeTutorialStepUser;
-        this.CodeStatusTutorialUser = codeStatusTutorialUser;
+        this.codeStatusTutorialUser = codeStatusTutorialUser;
         this.status=status;
 
     }
@@ -52,11 +52,11 @@ public class TutorialUser {
     }
 
     public int getCodeStatusTutorialUser() {
-        return CodeStatusTutorialUser;
+        return codeStatusTutorialUser;
     }
 
     public void setCodeStatusTutorialUser(int codeStatusTutorialUser) {
-        CodeStatusTutorialUser = codeStatusTutorialUser;
+        this.codeStatusTutorialUser = codeStatusTutorialUser;
     }
 
     public String getStatus() {

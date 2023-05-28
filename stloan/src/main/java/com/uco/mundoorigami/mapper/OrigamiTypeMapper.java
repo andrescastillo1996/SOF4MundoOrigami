@@ -16,7 +16,8 @@ public interface OrigamiTypeMapper {
     @Mappings({
             @Mapping(source = "code", target ="code"),
             @Mapping(source ="name", target = "name"),
-            @Mapping(source = "status", target = "status")
+            @Mapping(source = "status", target = "status"),
+            @Mapping(source = "description", target = "description")
     })
     OrigamiType toOrigamiType(OrigamiTypeEntity origamiType);
     List<OrigamiType> toOrigamiTypeList(List<OrigamiTypeEntity> origamiTypeEntities);

@@ -25,6 +25,7 @@ public class OrigamiServiceImpl implements OrigamiService {
 
     @Override
     public Origami save(Origami origami) {
+        origami.setStatus("A");
         return origamiMapper.toOrigami(origamiRepository.save(origamiMapper.toOrigamiEntity(origami)));
     }
 
@@ -32,6 +33,12 @@ public class OrigamiServiceImpl implements OrigamiService {
     public List<Origami> getAllByStatus(String status) {
         return  origamiMapper.tOrigamiList(origamiRepository.findByStatus(status));
     }
+
+    @Override
+    public List<Origami> getAllByTutorialId(int tutorialId, String status) {
+        return origamiMapper.tOrigamiList(origamiRepository.findAllByTutorialIdAndStatus(tutorialId,status));
+    }
+
 
     @Override
     public void delete(int code) {

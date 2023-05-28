@@ -15,6 +15,11 @@ public interface OrigamiRepository extends CrudRepository<OrigamiEntity, Integer
     @Query(value = " SELECT * FROM ORIGAMI WHERE STATUS = :status ", nativeQuery = true)
     List<OrigamiEntity> findByStatus(@Param("status") String status);
 
+
+
+
+    List<OrigamiEntity> findAllByTutorialIdAndStatus(int tutorialId, String status);
+
     @Query(value = " SELECT * FROM ORIGAMI WHERE CODE = :code and STATUS = :status ", nativeQuery = true)
     OrigamiEntity findByCode(@Param("code")int code, @Param("status") String status);
 }

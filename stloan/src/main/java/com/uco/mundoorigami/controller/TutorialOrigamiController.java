@@ -20,10 +20,6 @@ public class TutorialOrigamiController {
     }
 
 
-    @PostMapping
-    public ResponseEntity<TutorialOrigami> save(@RequestBody TutorialOrigami origami){
-        return  new ResponseEntity<>(tutorialOrigamiService.save(origami), HttpStatus.CREATED);
-    }
 
     @GetMapping("/all-by-status/{status}")
     public ResponseEntity<List<TutorialOrigami>> getAllByStatus(@PathVariable String status){

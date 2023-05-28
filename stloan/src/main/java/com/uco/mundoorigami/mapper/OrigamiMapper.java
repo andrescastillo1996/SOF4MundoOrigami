@@ -16,6 +16,7 @@ public interface OrigamiMapper {
 
     @Mappings({
             @Mapping(source = "code", target ="code"),
+            @Mapping(source = "tutorialId", target = "tutorialId"),
             @Mapping(source = "origamiTypeId", target = "origamiTypeId"),
             @Mapping(source = "name", target = "name"),
             @Mapping(source = "status", target = "status"),

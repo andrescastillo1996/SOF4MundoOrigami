@@ -11,6 +11,8 @@ public interface OrigamiService {
     Origami save(Origami origami);
 
     List<Origami> getAllByStatus(String status);
+
+    List<Origami> getAllByTutorialId(int tutorialId, String status);
     void delete(int code);
 
     Origami update(Origami origami);

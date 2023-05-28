@@ -7,10 +7,7 @@ public class TutorialOrigamiEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int code;
-    @Column(name="codeOrigami")
-    private int codeOrigami;
-    @Column(name="codeTutorialStep")
-    private int codeTutorialStep;
+
     @Column(name="description")
     private String description;
     @Column(name = "status")
@@ -19,10 +16,7 @@ public class TutorialOrigamiEntity {
     private String level;
     @Column(name="category")
     private String category;
-    public TutorialOrigamiEntity()
-    {
-
-    }
+    public TutorialOrigamiEntity() {}
 
     public int getCode() {
         return code;
@@ -32,21 +26,7 @@ public class TutorialOrigamiEntity {
         this.code = code;
     }
 
-    public int getCodeOrigami() {
-        return codeOrigami;
-    }
 
-    public void setCodeOrigami(int codeOrigami) {
-        this.codeOrigami = codeOrigami;
-    }
-
-    public int getCodeTutorialStep() {
-        return codeTutorialStep;
-    }
-
-    public void setCodeTutorialStep(int codeTutorialStep) {
-        this.codeTutorialStep = codeTutorialStep;
-    }
 
     public String getDescription() {
         return description;

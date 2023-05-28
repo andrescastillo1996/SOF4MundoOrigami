@@ -3,18 +3,14 @@ package com.uco.mundoorigami.domain;
 public class TutorialOrigami {
 
     private int code;
-    private int codeOrigami;
-    private int codeTutorialStep;
-
     private String description;
     private String status;
     private String level;
-     private String category;
+    private String category;
 
 
-    public TutorialOrigami(int codeOrigami, int codeTutorialStep, String description, String status, String level, String category) {
-        this.codeOrigami = codeOrigami;
-        this.codeTutorialStep = codeTutorialStep;
+    public TutorialOrigami(String description, String status, String level, String category) {
+
         this.description = description;
         this.status = status;
         this.level = level;
@@ -27,22 +23,6 @@ public class TutorialOrigami {
 
     public void setCode(int code) {
         this.code = code;
-    }
-
-    public int getCodeOrigami() {
-        return codeOrigami;
-    }
-
-    public void setCodeOrigami(int codeOrigami) {
-        this.codeOrigami = codeOrigami;
-    }
-
-    public int getCodeTutorialStep() {
-        return codeTutorialStep;
-    }
-
-    public void setCodeTutorialStep(int codeTutorialStep) {
-        this.codeTutorialStep = codeTutorialStep;
     }
 
     public String getDescription() {

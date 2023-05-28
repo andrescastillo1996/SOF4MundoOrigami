@@ -25,7 +25,7 @@ public class OrigamiTypeController {
         origamiTypeService.save(origamiType);
         return  ResponseEntity.ok().build();
     }
-    @GetMapping("/all-by-status-origami-type/{status}")
+    @GetMapping("/all-by-status/{status}")
     public ResponseEntity<List<OrigamiType>> getAllByStatus(@PathVariable String status){
         return  new ResponseEntity<>(origamiTypeService.getAllByStatusOrigamiType(status), HttpStatus.OK);
 
