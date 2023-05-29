@@ -1,7 +1,7 @@
 package com.uco.mundoorigami.service.origami.impl;
 
 
-import com.uco.mundoorigami.domain.Origami;
+import com.uco.mundoorigami.domain.TutorialStep;
 import com.uco.mundoorigami.mapper.OrigamiMapper;
 import com.uco.mundoorigami.model.OrigamiEntity;
 import com.uco.mundoorigami.repository.OrigamiRepository;
@@ -24,18 +24,18 @@ public class OrigamiServiceImpl implements OrigamiService {
     }
 
     @Override
-    public Origami save(Origami origami) {
-        origami.setStatus("A");
-        return origamiMapper.toOrigami(origamiRepository.save(origamiMapper.toOrigamiEntity(origami)));
+    public TutorialStep save(TutorialStep tutorialStep) {
+        tutorialStep.setStatus("A");
+        return origamiMapper.toOrigami(origamiRepository.save(origamiMapper.toOrigamiEntity(tutorialStep)));
     }
 
     @Override
-    public List<Origami> getAllByStatus(String status) {
+    public List<TutorialStep> getAllByStatus(String status) {
         return  origamiMapper.tOrigamiList(origamiRepository.findByStatus(status));
     }
 
     @Override
-    public List<Origami> getAllByTutorialId(int tutorialId, String status) {
+    public List<TutorialStep> getAllByTutorialId(int tutorialId, String status) {
         return origamiMapper.tOrigamiList(origamiRepository.findAllByTutorialIdAndStatus(tutorialId,status));
     }
 
@@ -49,10 +49,10 @@ public class OrigamiServiceImpl implements OrigamiService {
     }
 
     @Override
-    public Origami update(Origami origami) {
-        OrigamiEntity origamiToUpdate = this.origamiRepository.findByCode(origami.getCode(), "A");
-        origamiToUpdate.setName(origami.getName());
-        origamiToUpdate.setImageURL(origami.getImageURL());
+    public TutorialStep update(TutorialStep tutorialStep) {
+        OrigamiEntity origamiToUpdate = this.origamiRepository.findByCode(tutorialStep.getCode(), "A");
+        origamiToUpdate.setName(tutorialStep.getName());
+        origamiToUpdate.setImageURL(tutorialStep.getImageURL());
         return origamiMapper.toOrigami(origamiRepository.save(origamiToUpdate));
     }
 

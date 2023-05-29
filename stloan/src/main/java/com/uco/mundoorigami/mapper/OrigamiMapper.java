@@ -1,7 +1,7 @@
 package com.uco.mundoorigami.mapper;
 
 
-import com.uco.mundoorigami.domain.Origami;
+import com.uco.mundoorigami.domain.TutorialStep;
 import com.uco.mundoorigami.model.OrigamiEntity;
 import org.mapstruct.InheritInverseConfiguration;
 import org.mapstruct.Mapper;
@@ -22,10 +22,10 @@ public interface OrigamiMapper {
             @Mapping(source = "status", target = "status"),
             @Mapping(source = "imageURL", target = "imageURL")
     })
-    Origami toOrigami(OrigamiEntity origami);
-    List<Origami> tOrigamiList(List<OrigamiEntity> origamiEntityList);
+    TutorialStep toOrigami(OrigamiEntity origami);
+    List<TutorialStep> tOrigamiList(List<OrigamiEntity> origamiEntityList);
 
     @InheritInverseConfiguration
-    OrigamiEntity toOrigamiEntity(Origami origami);
-    List<OrigamiEntity> toOrigamiEntityList(List<Origami> origamiList);
+    OrigamiEntity toOrigamiEntity(TutorialStep tutorialStep);
+    List<OrigamiEntity> toOrigamiEntityList(List<TutorialStep> tutorialStepList);
 }

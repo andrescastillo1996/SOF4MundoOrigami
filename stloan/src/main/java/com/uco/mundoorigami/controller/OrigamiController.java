@@ -1,6 +1,6 @@
 package com.uco.mundoorigami.controller;
 
-import com.uco.mundoorigami.domain.Origami;
+import com.uco.mundoorigami.domain.TutorialStep;
 import com.uco.mundoorigami.service.origami.impl.OrigamiServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -19,19 +19,19 @@ public class OrigamiController {
         this.origamiService = origamiService;
     }
     @PostMapping
-    public ResponseEntity<Origami> save(@RequestBody Origami origami){
-        return  new ResponseEntity<>(origamiService.save(origami), HttpStatus.CREATED);
+    public ResponseEntity<TutorialStep> save(@RequestBody TutorialStep tutorialStep){
+        return  new ResponseEntity<>(origamiService.save(tutorialStep), HttpStatus.CREATED);
     }
 
     @GetMapping("/all-by-status/{status}")
-    public ResponseEntity<List<Origami>> getAllByStatus(@PathVariable String status){
+    public ResponseEntity<List<TutorialStep>> getAllByStatus(@PathVariable String status){
         return  new ResponseEntity<>(origamiService.getAllByStatus(status),HttpStatus.OK);
 
     }
 
     @PutMapping("update")
-    public ResponseEntity<Origami> update(@RequestBody Origami origami){
-        return  new ResponseEntity<>(origamiService.update(origami), HttpStatus.CREATED);
+    public ResponseEntity<TutorialStep> update(@RequestBody TutorialStep tutorialStep){
+        return  new ResponseEntity<>(origamiService.update(tutorialStep), HttpStatus.CREATED);
     }
 
     @DeleteMapping("delete/{code}")

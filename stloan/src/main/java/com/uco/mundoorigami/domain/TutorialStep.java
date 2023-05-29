@@ -1,20 +1,26 @@
 package com.uco.mundoorigami.domain;
 
 public class TutorialStep {
-
-
     private int code;
-    private int step;
-    private int codeResource;
-    private  String status;
+    private long origamiTypeId;
+    private int tutorialId;
+    private int orden;
+    private String name;
+    private String description;
 
-    public TutorialStep(int code, int step, int codeResource,     String status) {
+    private String status;
+    private String imageURL;
+
+    public TutorialStep(int code, long origamiTypeId, int tutorialId, int orden, String name, String description, String status, String imageURL) {
         this.code = code;
-        this.step = step;
-        this.codeResource = codeResource;
-        this.status=status;
+        this.origamiTypeId = origamiTypeId;
+        this.tutorialId = tutorialId;
+        this.orden = orden;
+        this.name = name;
+        this.description = description;
+        this.status = status;
+        this.imageURL = imageURL;
     }
-
 
     public int getCode() {
         return code;
@@ -24,20 +30,44 @@ public class TutorialStep {
         this.code = code;
     }
 
-    public int getStep() {
-        return step;
+    public long getOrigamiTypeId() {
+        return origamiTypeId;
     }
 
-    public void setStep(int step) {
-        this.step = step;
+    public void setOrigamiTypeId(long origamiTypeId) {
+        this.origamiTypeId = origamiTypeId;
     }
 
-    public int getCodeResource() {
-        return codeResource;
+    public int getTutorialId() {
+        return tutorialId;
     }
 
-    public void setCodeResource(int codeResource) {
-        this.codeResource = codeResource;
+    public void setTutorialId(int tutorialId) {
+        this.tutorialId = tutorialId;
+    }
+
+    public int getOrden() {
+        return orden;
+    }
+
+    public void setOrden(int orden) {
+        this.orden = orden;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public String getStatus() {
@@ -46,5 +76,13 @@ public class TutorialStep {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public String getImageURL() {
+        return imageURL;
+    }
+
+    public void setImageURL(String imageURL) {
+        this.imageURL = imageURL;
     }
 }

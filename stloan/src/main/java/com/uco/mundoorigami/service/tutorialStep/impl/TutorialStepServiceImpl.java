@@ -1,7 +1,6 @@
 package com.uco.mundoorigami.service.tutorialStep.impl;
 
 
-import com.uco.mundoorigami.domain.TutorialStep;
 import com.uco.mundoorigami.mapper.TutorialStepMapper;
 import com.uco.mundoorigami.repository.TutorialStepRepository;
 import com.uco.mundoorigami.service.tutorialStep.TutorialStepService;
@@ -24,12 +23,12 @@ public class TutorialStepServiceImpl implements TutorialStepService {
     }
 
     @Override
-    public TutorialStep save(TutorialStep tutorialStep) {
-        return tutorialStepMapper.toTutorialStep(tutorialStepRepository.save(tutorialStepMapper.toTutorialStepEntity(tutorialStep)));
+    public TutorialStep2 save(TutorialStep2 tutorialStep2) {
+        return tutorialStepMapper.toTutorialStep(tutorialStepRepository.save(tutorialStepMapper.toTutorialStepEntity(tutorialStep2)));
     }
 
     @Override
-    public List<TutorialStep> getAllByStatus(String status) {
+    public List<TutorialStep2> getAllByStatus(String status) {
         return  tutorialStepMapper.toTutorialStepsList(tutorialStepRepository.findByStatus(status));
 
     }
@@ -43,7 +42,7 @@ public class TutorialStepServiceImpl implements TutorialStepService {
     }
 
     @Override
-    public TutorialStep update(TutorialStep tutorialStep) {
+    public TutorialStep2 update(TutorialStep2 tutorialStep2) {
         return null;
     }
 

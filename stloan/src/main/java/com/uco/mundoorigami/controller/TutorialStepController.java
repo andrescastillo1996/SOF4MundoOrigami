@@ -1,7 +1,6 @@
 package com.uco.mundoorigami.controller;
 
 
-import com.uco.mundoorigami.domain.TutorialStep;
 import com.uco.mundoorigami.service.tutorialStep.impl.TutorialStepServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -22,9 +21,9 @@ public class TutorialStepController {
 
 
     @PostMapping
-    public ResponseEntity<TutorialStep>save(@RequestBody TutorialStep tutorialStep)
+    public ResponseEntity<TutorialStep2>save(@RequestBody TutorialStep2 tutorialStep2)
     {
-        return  new ResponseEntity<>(tutorialStepService.save(tutorialStep),HttpStatus.CREATED);
+        return  new ResponseEntity<>(tutorialStepService.save(tutorialStep2),HttpStatus.CREATED);
 
     }
 
@@ -32,14 +31,14 @@ public class TutorialStepController {
 
 
     @GetMapping("/all-by-status-tutorial-step/{status}")
-    public ResponseEntity<List<TutorialStep>> getAllByStatus(@PathVariable String status){
+    public ResponseEntity<List<TutorialStep2>> getAllByStatus(@PathVariable String status){
         return  new ResponseEntity<>(tutorialStepService.getAllByStatus(status),HttpStatus.OK);
 
     }
 
     @PutMapping("update")
-    public ResponseEntity<TutorialStep> update(@RequestBody TutorialStep tutorialStep){
-        return  new ResponseEntity<>(tutorialStepService.update(tutorialStep), HttpStatus.CREATED);
+    public ResponseEntity<TutorialStep2> update(@RequestBody TutorialStep2 tutorialStep2){
+        return  new ResponseEntity<>(tutorialStepService.update(tutorialStep2), HttpStatus.CREATED);
     }
 
     @DeleteMapping("delete/{code}")

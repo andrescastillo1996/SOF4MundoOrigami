@@ -2,20 +2,20 @@ package com.uco.mundoorigami.service.origami;
 
 
 
-import com.uco.mundoorigami.domain.Origami;
+import com.uco.mundoorigami.domain.TutorialStep;
 
 import java.util.List;
 
 public interface OrigamiService {
 
-    Origami save(Origami origami);
+    TutorialStep save(TutorialStep tutorialStep);
 
-    List<Origami> getAllByStatus(String status);
+    List<TutorialStep> getAllByStatus(String status);
 
-    List<Origami> getAllByTutorialId(int tutorialId, String status);
+    List<TutorialStep> getAllByTutorialId(int tutorialId, String status);
     void delete(int code);
 
-    Origami update(Origami origami);
+    TutorialStep update(TutorialStep tutorialStep);
 
 
 

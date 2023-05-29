@@ -1,7 +1,6 @@
 package com.uco.mundoorigami.mapper;
 
 
-import com.uco.mundoorigami.domain.TutorialStep;
 import com.uco.mundoorigami.model.TutorialStepEntity;
 import org.mapstruct.InheritInverseConfiguration;
 import org.mapstruct.Mapper;
@@ -19,10 +18,10 @@ public interface TutorialStepMapper {
             @Mapping(source = "codeResource", target = "codeResource"),
             @Mapping(source = "status",target = "status")
     })
-    TutorialStep toTutorialStep(TutorialStepEntity tutorialStepEntity);
-    List<TutorialStep> toTutorialStepsList(List<TutorialStepEntity> tutorialStepEntityList);
+    TutorialStep2 toTutorialStep(TutorialStepEntity tutorialStepEntity);
+    List<TutorialStep2> toTutorialStepsList(List<TutorialStepEntity> tutorialStepEntityList);
 
     @InheritInverseConfiguration
-    TutorialStepEntity toTutorialStepEntity(TutorialStep tutorialStep);
-    List<TutorialStepEntity> toOrigamiEntityList(List<TutorialStep> tutorialStepList);
+    TutorialStepEntity toTutorialStepEntity(TutorialStep2 tutorialStep2);
+    List<TutorialStepEntity> toOrigamiEntityList(List<TutorialStep2> tutorialStep2List);
 }
