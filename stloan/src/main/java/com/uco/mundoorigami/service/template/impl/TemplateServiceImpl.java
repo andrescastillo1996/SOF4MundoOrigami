@@ -26,7 +26,7 @@ public class TemplateServiceImpl implements TemplateService {
     @Override
     public void saveTemplate(TutorialTemplate template) {
         TutorialOrigami tutorial = this.tutorialOrigamiService.save(template.getTutorial());
-        template.getTutorialStepList().forEach(origami -> {
+        template.getSteps().forEach(origami -> {
             origami.setTutorialId(tutorial.getCode());
             this.tutorialStepService.save(origami);
         });

@@ -10,11 +10,11 @@ public class OrigamiTypeEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int code;
-    @Column(name="name")
+    @Column(name="name",length=500)
     private String name;
     @Column(name="status")
     private String status;
-    @Column(name="description")
+    @Column(name="description",length=10000)
     private String description;
 
 

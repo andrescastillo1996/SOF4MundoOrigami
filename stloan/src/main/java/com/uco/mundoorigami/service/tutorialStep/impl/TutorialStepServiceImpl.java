@@ -2,6 +2,8 @@ package com.uco.mundoorigami.service.tutorialStep.impl;
 
 
 import com.uco.mundoorigami.domain.TutorialStep;
+import com.uco.mundoorigami.mapper.TutorialStepMapper;
+import com.uco.mundoorigami.model.TutorialStepEntity;
 import com.uco.mundoorigami.repository.TutorialStepRepository;
 import com.uco.mundoorigami.service.tutorialStep.TutorialStepService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,12 +26,12 @@ public class TutorialStepServiceImpl implements TutorialStepService {
     @Override
     public TutorialStep save(TutorialStep tutorialStep) {
         tutorialStep.setStatus("A");
-        return tutorialStepMapper.toOrigami(tutorialStepRepository.save(tutorialStepMapper.toOrigamiEntity(tutorialStep)));
+        return tutorialStepMapper.toTutorialStep(tutorialStepRepository.save(tutorialStepMapper.toTutorialStepEntity(tutorialStep)));
     }
 
     @Override
     public List<TutorialStep> getAllByStatus(String status) {
-        return  tutorialStepMapper.tOrigamiList(tutorialStepRepository.findByStatus(status));
+        return  tutorialStepMapper.toTutorialStepsList(tutorialStepRepository.findByStatus(status));
     }
 
     @Override
@@ -51,7 +53,7 @@ public class TutorialStepServiceImpl implements TutorialStepService {
         TutorialStepEntity origamiToUpdate = this.tutorialStepRepository.findByCode(tutorialStep.getCode(), "A");
         origamiToUpdate.setName(tutorialStep.getName());
         origamiToUpdate.setImageURL(tutorialStep.getImageURL());
-        return tutorialStepMapper.toOrigami(tutorialStepRepository.save(origamiToUpdate));
+        return tutorialStepMapper.toTutorialStep(tutorialStepRepository.save(origamiToUpdate));
     }
 
 }

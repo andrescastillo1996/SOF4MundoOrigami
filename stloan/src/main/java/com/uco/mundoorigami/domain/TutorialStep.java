@@ -4,18 +4,18 @@ public class TutorialStep {
     private int code;
     private long origamiTypeId;
     private int tutorialId;
-    private int orden;
+    private int order;
     private String name;
     private String description;
 
     private String status;
     private String imageURL;
 
-    public TutorialStep(int code, long origamiTypeId, int tutorialId, int orden, String name, String description, String status, String imageURL) {
+    public TutorialStep(int code, long origamiTypeId, int tutorialId, int order, String name, String description, String status, String imageURL) {
         this.code = code;
         this.origamiTypeId = origamiTypeId;
         this.tutorialId = tutorialId;
-        this.orden = orden;
+        this.order = order;
         this.name = name;
         this.description = description;
         this.status = status;
@@ -46,12 +46,12 @@ public class TutorialStep {
         this.tutorialId = tutorialId;
     }
 
-    public int getOrden() {
-        return orden;
+    public int getOrder() {
+        return order;
     }
 
-    public void setOrden(int orden) {
-        this.orden = orden;
+    public void setOrder(int order) {
+        this.order = order;
     }
 
     public String getName() {

@@ -9,5 +9,6 @@ import java.util.List;
 @AllArgsConstructor
 public class TutorialTemplate {
     private TutorialOrigami tutorial;
-    private List<TutorialStep> tutorialStepList;
+    private List<TutorialStep> steps;
 }
+

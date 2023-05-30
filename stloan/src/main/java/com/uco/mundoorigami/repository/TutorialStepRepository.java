@@ -1,6 +1,7 @@
 package com.uco.mundoorigami.repository;
 
 
+import com.uco.mundoorigami.model.TutorialStepEntity;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
