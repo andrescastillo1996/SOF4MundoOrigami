@@ -2,15 +2,23 @@ package com.uco.mundoorigami.service.tutorialStep;
 
 
 
+import com.uco.mundoorigami.domain.TutorialStep;
+
 import java.util.List;
 
 public interface TutorialStepService {
 
-    TutorialStep2 save (TutorialStep2 tutorialStep2);
+    TutorialStep save(TutorialStep tutorialStep);
 
+    List<TutorialStep> getAllByStatus(String status);
 
-    List<TutorialStep2> getAllByStatus(String status);
+    List<TutorialStep> getAllByTutorialId(int tutorialId, String status);
     void delete(int code);
 
-    TutorialStep2 update(TutorialStep2 tutorialStep2);
+    TutorialStep update(TutorialStep tutorialStep);
+
+
+
+
+
 }

@@ -3,7 +3,6 @@ package com.uco.mundoorigami.service.origamitype.impl;
 
 import com.uco.mundoorigami.domain.OrigamiType;
 import com.uco.mundoorigami.mapper.OrigamiTypeMapper;
-import com.uco.mundoorigami.model.OrigamiTypeEntity;
 import com.uco.mundoorigami.repository.OrigamiTypeRepository;
 import com.uco.mundoorigami.service.origamitype.OrigamiTypeService;
 import org.springframework.beans.factory.annotation.Autowired;
